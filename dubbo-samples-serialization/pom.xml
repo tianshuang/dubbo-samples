@@ -29,6 +29,7 @@
     <artifactId>dubbo-samples-serialization</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>dubbo-samples-serialization-hessian2</module>
         <module>dubbo-samples-serialization-java</module>
     </modules>
 
