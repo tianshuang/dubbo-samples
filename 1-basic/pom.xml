@@ -30,6 +30,7 @@
         <module>dubbo-samples-annotation</module>
         <module>dubbo-samples-api</module>
         <module>dubbo-samples-basic</module>
+        <module>dubbo-samples-generic-invocation</module>
         <module>dubbo-samples-spring-boot</module>
     </modules>
 </project>
