@@ -28,6 +28,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:spring/dubbo-demo-consumer.xml")
@@ -44,6 +45,16 @@ public class DemoServiceIT {
     @Test
     public void testShortList() {
         Assert.assertTrue(service.testShortList(Arrays.asList((short) 1, (short) 2)).startsWith("shortList:"));
+    }
+
+    @Test
+    public void testNestedByteList() {
+        Assert.assertTrue(service.testNestedByteList(Collections.singletonList(Arrays.asList((byte) 1, (byte) 2))).startsWith("byteListList:"));
+    }
+
+    @Test
+    public void testNestedShortList() {
+        Assert.assertTrue(service.testNestedShortList(Collections.singletonList(Arrays.asList((short) 1, (short) 2))).startsWith("shortListList:"));
     }
 
 }

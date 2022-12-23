@@ -50,4 +50,30 @@ public class DemoServiceImpl implements DemoService {
         return "shortList: " + shortList + ", response from provider: " + RpcContext.getContext().getLocalAddress();
     }
 
+    @Override
+    public String testNestedByteList(List<List<Byte>> byteListList) {
+        for (List<Byte> byteList : byteListList) {
+            for (Byte b : byteList) {
+                System.out.println(b);
+            }
+        }
+
+        System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] byteListList: " + byteListList +
+                ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
+        return "byteListList: " + byteListList + ", response from provider: " + RpcContext.getContext().getLocalAddress();
+    }
+
+    @Override
+    public String testNestedShortList(List<List<Short>> shortListList) {
+        for (List<Short> shortList : shortListList) {
+            for (Short s : shortList) {
+                System.out.println(s);
+            }
+        }
+
+        System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] shortListList: " + shortListList +
+                ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
+        return "shortListList: " + shortListList + ", response from provider: " + RpcContext.getContext().getLocalAddress();
+    }
+
 }

@@ -27,4 +27,8 @@ public interface DemoService {
 
     String testShortList(List<Short> shortList);
 
+    String testNestedByteList(List<List<Byte>> byteListList);
+
+    String testNestedShortList(List<List<Short>> shortListList);
+
 }

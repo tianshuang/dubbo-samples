@@ -24,6 +24,7 @@ import org.apache.dubbo.samples.generic_invocation.api.DemoService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class BasicConsumer {
 
@@ -36,6 +37,12 @@ public class BasicConsumer {
         System.out.println(response);
 
         response = demoService.testShortList(Arrays.asList((short) 1, (short) 2));
+        System.out.println(response);
+
+        response = demoService.testNestedByteList(Collections.singletonList(Arrays.asList((byte) 1, (byte) 2)));
+        System.out.println(response);
+
+        response = demoService.testNestedShortList(Collections.singletonList(Arrays.asList((short) 1, (short) 2)));
         System.out.println(response);
     }
 }
